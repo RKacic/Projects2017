@@ -1,0 +1,3 @@
+OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total
+21,2017-12-01,rob,OH,6.25,Carpet,3123,2.25,2.10,7026.75,6558.30,849.07,14434.12
+10,2017-12-01,ben,PA,6.75,Laminate,444,1.75,2.10,777.00,932.40,115.38,1824.78

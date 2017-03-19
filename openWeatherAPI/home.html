@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>jQuery HTML Element Lab</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/sticky-footer.css" rel="stylesheet">
+    <link href="css/eq-height-row.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row" id="myBanner">
+            <div class="header text-center">
+                <h1>Weather Page</h1>
+                <ul class="list-group" id="errorMessages"></ul>
+            </div>
+        </div>
+        <div class="row" id="input-row">
+            <form class="form-inline text-center" role="form" id="input-form">
+                <div class="form-group">
+                    <label for="zipcode-input" class="col-md-4">
+                        <h4>Zip Code:</h4>
+                    </label>
+                    <div class="col-md-2">
+                        <input type="number" class="form-control" id="zipcode-input" placeholder="zip code" required/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="unit-select" class="col-md-4 control-label">
+                        <h4>Unit:</h4>
+                    </label>
+                    <div class="col-md-2">
+                        <select class="form-control" id="unit-select">
+                            <option id="imperial">imperial</option>
+                            <option id="metric">metric</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-4">
+                        <button type="button" class="btn btn-default" id="getWeather">Get Weather</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="container" id="weather-display">
+            <div class="row">
+                <div class="col-md-12">
+                    <h4 id="currentCity">Current Conditions in </h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <ul id="daily-weather-icon" style="list-style: none">
+                    </ul>
+                </div>
+                <div class="col-md-8">
+                    <ul id="daily-weather-conditions" style="list-style: none">
+                    </ul>
+                </div>
+                <hr/>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>Five Day Forecast</h4>
+                </div>
+            </div>
+            <div class="row" id="current-condition" style="display: show">
+                <div class="col-md-2">
+                    <ul id="day1" style="list-style: none">
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <ul id="day2" style="list-style: none">
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <ul id="day3" style="list-style: none">
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <ul id="day4" style="list-style: none">
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <ul id="day5" style="list-style: none">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery-3.0.0.min.js"></script>
+    <script src="js/home.js"></script>
+</body>
+
+</html>

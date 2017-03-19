@@ -1,0 +1,74 @@
+----  2017-02-26 01:49:33 | addOrder | order number: 22| new order added for customer: katie | Product type: Carpet | State: OH | area: 1000 | order total: 4621.88 | orders scheduled date: 2017-11-11
+----  2017-02-26 01:50:33 | removeOrder | com.sg.flooringmasters.dao.FlooringMasterOrderNotFoundException: 
+ERROR: This order does not exist...
+
+----  2017-02-26 01:50:33 | removeOrder | failed to find date for date: 2017-11-11 | com.sg.flooringmasters.dao.FlooringMasterOrderNotFoundException: 
+ERROR: This order does not exist...
+
+----  2017-02-26 01:50:33 | removeOrder | order number removed: 22 | date of order removed: 2017-11-11
+----  2017-02-26 01:51:25 | getAllOrders | com.sg.flooringmasters.dao.FlooringMasterOrderNotFoundException: 
+ERROR: No orders exist for this date...
+
+----  2017-02-26 01:51:25 | getAllOrders | failed to find date for date: 2017-11-11 | com.sg.flooringmasters.dao.FlooringMasterOrderNotFoundException: 
+ERROR: No orders exist for this date...
+
+----  2017-02-26 01:52:39 | getAllOrders | com.sg.flooringmasters.dao.FlooringMasterOrderNotFoundException: 
+ERROR: No orders exist for this date...
+
+----  2017-02-26 01:52:39 | getAllOrders | failed to find date for date: 1988-12-01 | com.sg.flooringmasters.dao.FlooringMasterOrderNotFoundException: 
+ERROR: No orders exist for this date...
+
+----  2017-02-26 01:54:41 | getAllOrders | com.sg.flooringmasters.dao.FlooringMasterOrderNotFoundException: 
+ERROR: No orders exist for this date...
+
+----  2017-02-26 01:54:41 | getAllOrders | failed to find date for date: 1988-12-01 | com.sg.flooringmasters.dao.FlooringMasterOrderNotFoundException: 
+ERROR: No orders exist for this date...
+
+----  2017-02-26 01:57:31 | getAllOrders | com.sg.flooringmasters.dao.FlooringMasterOrderNotFoundException: 
+ERROR: No orders exist for this date...
+
+----  2017-02-26 01:57:31 | getAllOrders | failed to find date for date: 1988-12-01 | com.sg.flooringmasters.dao.FlooringMasterOrderNotFoundException: 
+ERROR: No orders exist for this date...
+
+----  2017-02-26 02:04:53 | addOrder | order number: 23| new order added for customer: zack | Product type: Laminate | State: OH | area: 4213 | order total: 17233.80 | orders scheduled date: 1988-12-01
+----  2017-02-26 02:14:38 | addOrder | order number: 24| new order added for customer: kg | Product type: Carpet | State: IN | area: 100 | order total: 461.10 | orders scheduled date: 2017-02-27
+----  2017-02-26 02:15:20 | updateOrder | order number edited: 24 | customer: kg | order original date: 2017-02-27
+----  2017-02-26 02:20:24 | setMode>>>>>( no files persist )>>>>>>>>>  TRAINING MODE ENTERED   <<<<<<<<<<( no files persist )<<<<<
+----  2017-02-26 05:01:30 | addOrder | order number: 25| new order added for customer: asf | Product type: Carpet | State: OH | area: 234 | order total: 1081.52 | orders scheduled date: 2020-12-12
+----  2017-02-26 05:05:32 | addOrder | order number: 26| new order added for customer: asf | Product type: Carpet | State: OH | area: 345 | order total: 1594.55 | orders scheduled date: 2020-12-12
+----  2017-02-26 06:00:56 | addOrder | order number: 30| new order added for customer:  | Product type: Carpet | State: OH | area: 12 | order total: 55.46 | orders scheduled date: 2020-12-12
+----  2017-02-27 09:05:50 | setMode>>>>>( no files persist )>>>>>>>>>  TRAINING MODE ENTERED   <<<<<<<<<<( no files persist )<<<<<
+----  2017-02-27 09:17:03 | run | Program powered on default to pro mode all files persist
+----  2017-02-27 09:17:19 | run | Program powered off
+----  2017-02-27 09:17:46 | run | Program powered on default to pro mode all files persist
+----  2017-02-27 10:39:07 | run | Program powered on default to pro mode all files persist
+----  2017-02-27 10:40:44 | addOrder | order number: 31| new order added for customer: Pat | Product type: Wood | State: PA | area: 3 | order total: 31.70 | orders scheduled date: 2010-01-01
+----  2017-02-27 10:41:12 | getOrder | com.sg.flooringmasters.dao.FlooringMasterOrderNotFoundException: ERROR: This order does not exist
+----  2017-02-27 10:41:12 | getOrder | failed to find date for date: 2010-01-01 | com.sg.flooringmasters.dao.FlooringMasterOrderNotFoundException: ERROR: This order does not exist
+----  2017-02-27 10:42:03 | updateOrder | order number edited: 31 | customer: Pat | order original date: 2010-01-01 | new order date: 2017-02-02
+----  2017-02-27 10:42:20 | setMode>>>>>( no files persist )>>>>>>>>>  TRAINING MODE ENTERED   <<<<<<<<<<( no files persist )<<<<<
+----  2017-02-27 10:42:33 | removeOrder | com.sg.flooringmasters.dao.FlooringMasterOrderNotFoundException: 
+ERROR: This order does not exist...
+
+----  2017-02-27 10:42:33 | removeOrder | failed to find date for date: 2017-01-01 | com.sg.flooringmasters.dao.FlooringMasterOrderNotFoundException: 
+ERROR: This order does not exist...
+
+----  2017-02-27 10:42:33 | removeOrder | order number removed: 31 | date of order removed: 2017-01-01
+----  2017-02-27 10:42:45 | removeOrder | order number removed: 31 | date of order removed: 2017-02-02
+----  2017-02-27 10:43:01 | setMode>>>>>>>>>( files persist )>>>>>>>>     PRO MODE ENTERED     <<<<<<<<<<<( files persist )<<<<<<<
+----  2017-02-27 10:43:13 | removeOrder | order number removed: 31 | date of order removed: 2017-02-02
+----  2017-02-27 10:43:50 | addOrder | order number: 32| new order added for customer: ,,,,,comma lamma | Product type: Carpet | State: OH | area: 333 | order total: 1539.08 | orders scheduled date: 2020-12-12
+----  2017-02-27 10:44:26 | getAllOrders | com.sg.flooringmasters.dao.FlooringMasterOrderNotFoundException: 
+ERROR: No orders exist for this date...
+
+----  2017-02-27 10:44:26 | getAllOrders | failed to find date for date: 2017-12-12 | com.sg.flooringmasters.dao.FlooringMasterOrderNotFoundException: 
+ERROR: No orders exist for this date...
+
+----  2017-02-27 10:45:18 | run | Program powered off
+----  2017-03-03 08:54:19 | run | Program powered on default to pro mode all files persist
+----  2017-03-03 08:55:10 | getAllOrders | com.sg.flooringmasters.dao.FlooringMasterOrderNotFoundException: 
+ERROR: No orders exist for this date...
+
+----  2017-03-03 08:55:10 | getAllOrders | failed to find date for date: 2017-03-03 | com.sg.flooringmasters.dao.FlooringMasterOrderNotFoundException: 
+ERROR: No orders exist for this date...
+

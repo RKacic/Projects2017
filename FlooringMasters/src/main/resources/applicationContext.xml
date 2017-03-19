@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans.xsd
+          http://www.springframework.org/schema/mvc
+          http://www.springframework.org/schema/mvc/spring-mvc.xsd
+          http://www.springframework.org/schema/tx
+          http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+          http://www.springframework.org/schema/context
+          http://www.springframework.org/schema/context/spring-context.xsd
+          http://www.springframework.org/schema/aop  
+          http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
+
+    <!-- Bean definitions go here -->
+   
+   <bean id="myIO" class="com.sg.flooringmasters.ui.UserIOConsoleImpl"/>
+   
+   <bean id="myView" class="com.sg.flooringmasters.ui.FlooringMasterView">
+       <constructor-arg ref="myIO"/>
+   </bean>
+   
+   <bean id="ordersDao" class="com.sg.flooringmasters.dao.FlooringMasterOrdersDaoFileImpl"/>
+   
+   <bean id="orderNumberDao" class="com.sg.flooringmasters.dao.FlooringMasterOrderNumberDaoFileImpl"/>
+   
+   <bean id="productsDao" class="com.sg.flooringmasters.dao.FlooringMasterProductsDaoFileImpl"/>
+   
+   <bean id="taxRateDao" class="com.sg.flooringmasters.dao.FlooringMasterTaxRatesDaoFileImpl"/>
+   
+   <bean id="auditDao" class="com.sg.flooringmasters.dao.FlooringMasterAuditDaoFileImpl"/>
+   
+   <bean id="myService" class="com.sg.flooringmasters.service.FlooringMasterServiceImpl">
+       <constructor-arg ref="ordersDao"/>
+       <constructor-arg ref="orderNumberDao"/>
+       <constructor-arg ref="productsDao"/>
+       <constructor-arg ref="taxRateDao"/>
+   </bean>
+   
+   <bean id="controller" class="com.sg.flooringmasters.controller.FlooringMasterController">
+       <constructor-arg ref="myView"/>
+       <constructor-arg ref="myService"/>
+   </bean>
+   
+   <bean id="loggingAdvice" class="com.sg.flooringmasters.loggingadvice.Advice">
+       <constructor-arg ref="auditDao"/>
+   </bean>
+   
+   <aop:config>
+       <aop:aspect ref="loggingAdvice">
+           <aop:before
+                method="auditEntryProgramOn"
+                pointcut="execution(* com.sg.flooringmasters.controller.FlooringMasterController.run(..))"
+            />
+           <aop:after 
+                method="auditEntryProgramOff"
+                pointcut="execution(* com.sg.flooringmasters.controller.FlooringMasterController.run(..))"
+            />
+            <aop:after 
+                method="auditEntryOrderCreated"
+                pointcut="execution(* com.sg.flooringmasters.service.FlooringMasterServiceImpl.addOrder(..))"
+            />
+            <aop:after 
+                method="auditEntryOrderEdited"
+                pointcut="execution(* com.sg.flooringmasters.service.FlooringMasterServiceImpl.updateOrder(..))"
+            />
+            <aop:after 
+                method="auditEntryOrderRemoved"
+                pointcut="execution(* com.sg.flooringmasters.service.FlooringMasterServiceImpl.removeOrder(..))"
+            />
+            <aop:after 
+                method="auditEntryModeChanged"
+                pointcut="execution(* com.sg.flooringmasters.service.FlooringMasterServiceImpl.setMode(..))"
+            />
+            <aop:after-throwing 
+                method="auditEntryPassCodeFailed"
+                throwing="ex"
+                pointcut="execution(* com.sg.flooringmasters.ui.FlooringMasterView.getPassCode(..))"
+            />
+            <aop:after-throwing 
+                method="auditEntryFailedToPersistData"
+                throwing="ex"
+                pointcut="execution(* com.sg.flooringmasters.dao.*.*(..))"
+            />
+            <aop:after-throwing 
+                method="auditEntryFailToFindOrder"
+                throwing="ex"
+                pointcut="execution(* com.sg.flooringmasters.dao.*.*(..))"
+            />
+       </aop:aspect>
+   </aop:config>
+   
+   
+   
+   
+   
+   
+<!--UserIOConsoleImpl myIO = new UserIOConsoleImpl();
+    FlooringMasterView myView = new FlooringMasterView(myIO);
+    FlooringMasterOrdersDao ordersDao = new FlooringMasterOrdersDaoFileImpl();
+    FlooringMasterOrderNumberDao orderNumberDao = new FlooringMasterOrderNumberDaoFileImpl();
+    FlooringMasterProductsDao productsDao = new FlooringMasterProductsDaoFileImpl();
+    FlooringMasterTaxRatesDao taxRateDao = new FlooringMasterTaxRatesDaoFileImpl();
+    FlooringMasterService myService = new FlooringMasterServiceImpl(ordersDao, orderNumberDao, productsDao, taxRateDao);
+    FlooringMasterController controller = new FlooringMasterController(myView, myService);-->
+</beans>

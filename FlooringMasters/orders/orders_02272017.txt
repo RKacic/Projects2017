@@ -1,0 +1,2 @@
+OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total
+24,2017-02-27,kg,IN,6.00,Carpet,300,2.25,2.10,675.00,630.00,78.30,1383.30
